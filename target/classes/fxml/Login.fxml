@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.chart.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="900.0" style="-fx-padding: 0;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.zjw.springbootjavafx2.controller.LoginController">
+   <center>
+      <Pane prefHeight="457.0" prefWidth="814.0" style="-fx-background-color: pink;" BorderPane.alignment="CENTER">
+         <children>
+            <!---->
+            <Button layoutX="506.0" layoutY="336.0" mnemonicParsing="false" onAction="#login" prefHeight="40.0" prefWidth="78.0" text="登录" textFill="#ee0be7" />
+            <PasswordField fx:id="passwordInput" layoutX="334.0" layoutY="235.0" prefHeight="50.0" prefWidth="250.0" />
+            <TextField fx:id="accountInput" layoutX="334.0" layoutY="155.0" prefHeight="50.0" prefWidth="250.0" />
+            <Text layoutX="220.0" layoutY="188.0" strokeType="OUTSIDE" strokeWidth="0.0" text="账号：">
+               <font>
+                  <Font size="24.0" />
+               </font></Text>
+            <Text layoutX="220.0" layoutY="268.0" strokeType="OUTSIDE" strokeWidth="0.0" text="密码：">
+               <font>
+                  <Font size="24.0" />
+               </font></Text>
+            <Button layoutX="334.0" layoutY="336.0" mnemonicParsing="false" onAction="#clearAll" prefHeight="40.0" prefWidth="81.0" text="清空" textFill="#ff00e9" />
+            <Text layoutX="291.0" layoutY="88.0" strokeType="OUTSIDE" strokeWidth="0.0" text="欢迎使用餐馆供应链管理系统！">
+               <font>
+                  <Font size="24.0" />
+               </font></Text>
+            <Button layoutX="721.0" layoutY="413.0" mnemonicParsing="false" onAction="#manage" prefHeight="40.0" prefWidth="109.0" text="管理员入口" textFill="#00dcff" />
+         </children>
+      </Pane>
+   </center>
+</BorderPane>

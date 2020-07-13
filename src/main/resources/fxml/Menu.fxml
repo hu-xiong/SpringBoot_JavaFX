@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import javafx.scene.canvas.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="629.0" prefWidth="1003.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.zjw.springbootjavafx2.controller.MenuController">
+   <top>
+      <HBox prefHeight="67.0" prefWidth="1003.0" BorderPane.alignment="CENTER">
+         <children>
+            <MenuBar prefHeight="68.0" prefWidth="1005.0" style="-fx-background-color: pink;">
+              <menus>
+                <Menu mnemonicParsing="false" style="-fx-font-size: 25;" text="食材管理">
+                  <items>
+                        <MenuItem mnemonicParsing="false" onAction="#igdList" text="货品清单" />
+                    <MenuItem mnemonicParsing="false" onAction="#igdWrite" text="采购入库" />
+                        <MenuItem mnemonicParsing="false" onAction="#igdQuality" text="质量监控" />
+                  </items>
+                </Menu>
+                <Menu mnemonicParsing="false" style="-fx-font-size: 25;" text="调味品管理">
+                  <items>
+                        <MenuItem mnemonicParsing="false" onAction="#cdmList" text="货品列表" />
+                    <MenuItem mnemonicParsing="false" onAction="#cdmWrite" text="采购入库" />
+                  </items>
+                </Menu>
+                  <Menu mnemonicParsing="false" style="-fx-font-size: 25;" text="菜品管理">
+                     <items>
+                        <MenuItem mnemonicParsing="false" onAction="#dishList" text="菜品质量监控" />
+                        <MenuItem mnemonicParsing="false" onAction="#dishNeedIgd" text="菜品添加" />
+                     </items>
+                  </Menu>
+                  <Menu mnemonicParsing="false" style="-fx-font-size: 25;" text="供应商管理">
+                     <items>
+                        <MenuItem mnemonicParsing="false" onAction="#supplierList" text="供应商列表" />
+                        <MenuItem mnemonicParsing="false" onAction="#supplierWrite" text="供应商添加" />
+                     </items>
+                  </Menu>
+                <Menu mnemonicParsing="false" style="-fx-font-size: 25;" text="个人中心">
+                  <items>
+                        <MenuItem mnemonicParsing="false" onAction="#imageAllOf" text="供应链总括图" />
+                        <MenuItem mnemonicParsing="false" onAction="#accountDetail" text="账户详情" />
+                        <MenuItem mnemonicParsing="false" onAction="#exit" text="退出账户" />
+                  </items>
+                </Menu>
+              </menus>
+            </MenuBar>
+         </children>
+      </HBox>
+   </top>
+   <center>
+      <Pane prefHeight="550.0" prefWidth="1003.0" BorderPane.alignment="CENTER">
+         <children>
+            <ImageView fitHeight="588.0" fitWidth="1003.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/bg2.png" />
+               </image>
+            </ImageView>
+         </children></Pane>
+   </center>
+</BorderPane>

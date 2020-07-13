@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zjw.springbootjavafx2.dao.CondimentDao">
+  <resultMap id="BaseResultMap" type="com.zjw.springbootjavafx2.pojo.entity.Condiment">
+    <id column="cdm_ID" jdbcType="INTEGER" property="cdmId" />
+    <result column="cdm_name" jdbcType="VARCHAR" property="cdmName" />
+    <result column="cdm_enterHouseTime" jdbcType="DATE" property="cdmEnterhousetime" />
+    <result column="cdm_duration" jdbcType="INTEGER" property="cdmDuration" />
+    <result column="cdm_maxDuration" jdbcType="INTEGER" property="cdmMaxduration" />
+    <result column="cdm_supplier" jdbcType="VARCHAR" property="cdmSupplier" />
+    <result column="cdm_grade" jdbcType="INTEGER" property="cdmGrade" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    cdm_ID, cdm_name, cdm_enterHouseTime, cdm_duration, cdm_maxDuration, cdm_supplier, 
+    cdm_grade
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from condiment
+    where cdm_ID = #{cdmId,jdbcType=INTEGER}
+  </select>
+  <select id="showAll" resultType="com.zjw.springbootjavafx2.pojo.entity.Condiment">
+    SELECT
+    <include refid="Base_Column_List"/>
+    FROM condiment
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from condiment
+    where cdm_ID = #{cdmId,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" keyColumn="cdm_ID" keyProperty="cdmId" parameterType="com.zjw.springbootjavafx2.pojo.entity.Condiment" useGeneratedKeys="true">
+    insert into condiment (cdm_name, cdm_enterHouseTime, cdm_duration, 
+      cdm_maxDuration, cdm_supplier, cdm_grade
+      )
+    values (#{cdmName,jdbcType=VARCHAR}, #{cdmEnterhousetime,jdbcType=DATE}, #{cdmDuration,jdbcType=INTEGER}, 
+      #{cdmMaxduration,jdbcType=INTEGER}, #{cdmSupplier,jdbcType=VARCHAR}, #{cdmGrade,jdbcType=INTEGER}
+      )
+  </insert>
+  <insert id="insertSelective" keyColumn="cdm_ID" keyProperty="cdmId" parameterType="com.zjw.springbootjavafx2.pojo.entity.Condiment" useGeneratedKeys="true">
+    insert into condiment
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="cdmName != null">
+        cdm_name,
+      </if>
+      <if test="cdmEnterhousetime != null">
+        cdm_enterHouseTime,
+      </if>
+      <if test="cdmDuration != null">
+        cdm_duration,
+      </if>
+      <if test="cdmMaxduration != null">
+        cdm_maxDuration,
+      </if>
+      <if test="cdmSupplier != null">
+        cdm_supplier,
+      </if>
+      <if test="cdmGrade != null">
+        cdm_grade,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="cdmName != null">
+        #{cdmName,jdbcType=VARCHAR},
+      </if>
+      <if test="cdmEnterhousetime != null">
+        #{cdmEnterhousetime,jdbcType=DATE},
+      </if>
+      <if test="cdmDuration != null">
+        #{cdmDuration,jdbcType=INTEGER},
+      </if>
+      <if test="cdmMaxduration != null">
+        #{cdmMaxduration,jdbcType=INTEGER},
+      </if>
+      <if test="cdmSupplier != null">
+        #{cdmSupplier,jdbcType=VARCHAR},
+      </if>
+      <if test="cdmGrade != null">
+        #{cdmGrade,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.zjw.springbootjavafx2.pojo.entity.Condiment">
+    update condiment
+    <set>
+      <if test="cdmName != null">
+        cdm_name = #{cdmName,jdbcType=VARCHAR},
+      </if>
+      <if test="cdmEnterhousetime != null">
+        cdm_enterHouseTime = #{cdmEnterhousetime,jdbcType=DATE},
+      </if>
+      <if test="cdmDuration != null">
+        cdm_duration = #{cdmDuration,jdbcType=INTEGER},
+      </if>
+      <if test="cdmMaxduration != null">
+        cdm_maxDuration = #{cdmMaxduration,jdbcType=INTEGER},
+      </if>
+      <if test="cdmSupplier != null">
+        cdm_supplier = #{cdmSupplier,jdbcType=VARCHAR},
+      </if>
+      <if test="cdmGrade != null">
+        cdm_grade = #{cdmGrade,jdbcType=INTEGER},
+      </if>
+    </set>
+    where cdm_ID = #{cdmId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.zjw.springbootjavafx2.pojo.entity.Condiment">
+    update condiment
+    set cdm_name = #{cdmName,jdbcType=VARCHAR},
+      cdm_enterHouseTime = #{cdmEnterhousetime,jdbcType=DATE},
+      cdm_duration = #{cdmDuration,jdbcType=INTEGER},
+      cdm_maxDuration = #{cdmMaxduration,jdbcType=INTEGER},
+      cdm_supplier = #{cdmSupplier,jdbcType=VARCHAR},
+      cdm_grade = #{cdmGrade,jdbcType=INTEGER}
+    where cdm_ID = #{cdmId,jdbcType=INTEGER}
+  </update>
+</mapper>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="507.0" prefWidth="892.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.zjw.springbootjavafx2.controller.DishListController">
+   <top>
+      <Pane prefHeight="89.0" prefWidth="892.0" style="-fx-background-color: pink;" BorderPane.alignment="CENTER">
+         <children>
+            <Button layoutX="33.0" layoutY="25.0" mnemonicParsing="false" onAction="#back" prefHeight="40.0" prefWidth="100.0" text="返回" />
+            <Button layoutX="620.0" layoutY="25.0" mnemonicParsing="false" onAction="#show" prefHeight="40.0" prefWidth="100.0" text="显示" />
+         </children>
+      </Pane>
+   </top>
+   <center>
+      <Pane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <children>
+            <TableView fx:id="DishTable" prefHeight="419.0" prefWidth="892.0">
+              <columns>
+                <TableColumn fx:id="name" prefWidth="75.0" text="名称" />
+                <TableColumn fx:id="type" prefWidth="104.0" text="类型" />
+                  <TableColumn fx:id="difficulty" prefWidth="93.0" text="烹饪难度" />
+                  <TableColumn fx:id="grade" prefWidth="93.0" text="等级" />
+                  <TableColumn fx:id="cdm" minWidth="0.0" prefWidth="128.0" text="调味品" />
+                  <TableColumn fx:id="food1" prefWidth="93.0" text="主要食材一" />
+                  <TableColumn fx:id="amount1" prefWidth="98.0" text="食材一数量" />
+                  <TableColumn fx:id="food2" prefWidth="93.0" text="主要食材二" />
+                  <TableColumn fx:id="amount2" prefWidth="107.0" text="食材二数量" />
+              </columns>
+            </TableView>
+         </children>
+      </Pane>
+   </center>
+</BorderPane>

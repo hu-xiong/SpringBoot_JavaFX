@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zjw.springbootjavafx2.dao.IngredientDao">
+  <resultMap id="BaseResultMap" type="com.zjw.springbootjavafx2.pojo.entity.Ingredient">
+    <id column="igd_id" jdbcType="INTEGER" property="igdId" />
+    <result column="igd_name" jdbcType="VARCHAR" property="igdName" />
+    <result column="igd_type" jdbcType="VARCHAR" property="igdType" />
+    <result column="igd_enterHouseTime" jdbcType="DATE" property="igdEnterhousetime" />
+    <result column="igd_duration" jdbcType="INTEGER" property="igdDuration" />
+    <result column="igd_amount" jdbcType="VARCHAR" property="igdAmount" />
+    <result column="igd_supplier" jdbcType="VARCHAR" property="igdSupplier" />
+    <result column="igd_maxDuration" jdbcType="INTEGER" property="igdMaxduration" />
+    <result column="igd_grade" jdbcType="INTEGER" property="igdGrade" />
+    <result column="igd_saveMethod" jdbcType="VARCHAR" property="igdSavemethod" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    igd_id, igd_name, igd_type, igd_enterHouseTime, igd_duration, igd_amount, igd_supplier, 
+    igd_maxDuration, igd_grade, igd_saveMethod
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from ingredient
+    where igd_id = #{igdId,jdbcType=INTEGER}
+  </select>
+  <select id="selectAll" resultType="com.zjw.springbootjavafx2.pojo.entity.Ingredient">
+    SELECT
+    <include refid="Base_Column_List"/>
+    FROM ingredient
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from ingredient
+    where igd_id = #{igdId,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" keyColumn="igd_id" keyProperty="igdId" parameterType="com.zjw.springbootjavafx2.pojo.entity.Ingredient" useGeneratedKeys="true">
+    insert into ingredient (igd_name, igd_type, igd_enterHouseTime, 
+      igd_duration, igd_amount, igd_supplier, 
+      igd_maxDuration, igd_grade, igd_saveMethod
+      )
+    values (#{igdName,jdbcType=VARCHAR}, #{igdType,jdbcType=VARCHAR}, #{igdEnterhousetime,jdbcType=DATE}, 
+      #{igdDuration,jdbcType=INTEGER}, #{igdAmount,jdbcType=VARCHAR}, #{igdSupplier,jdbcType=VARCHAR}, 
+      #{igdMaxduration,jdbcType=INTEGER}, #{igdGrade,jdbcType=INTEGER}, #{igdSavemethod,jdbcType=VARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" keyColumn="igd_id" keyProperty="igdId" parameterType="com.zjw.springbootjavafx2.pojo.entity.Ingredient" useGeneratedKeys="true">
+    insert into ingredient
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="igdName != null">
+        igd_name,
+      </if>
+      <if test="igdType != null">
+        igd_type,
+      </if>
+      <if test="igdEnterhousetime != null">
+        igd_enterHouseTime,
+      </if>
+      <if test="igdDuration != null">
+        igd_duration,
+      </if>
+      <if test="igdAmount != null">
+        igd_amount,
+      </if>
+      <if test="igdSupplier != null">
+        igd_supplier,
+      </if>
+      <if test="igdMaxduration != null">
+        igd_maxDuration,
+      </if>
+      <if test="igdGrade != null">
+        igd_grade,
+      </if>
+      <if test="igdSavemethod != null">
+        igd_saveMethod,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="igdName != null">
+        #{igdName,jdbcType=VARCHAR},
+      </if>
+      <if test="igdType != null">
+        #{igdType,jdbcType=VARCHAR},
+      </if>
+      <if test="igdEnterhousetime != null">
+        #{igdEnterhousetime,jdbcType=DATE},
+      </if>
+      <if test="igdDuration != null">
+        #{igdDuration,jdbcType=INTEGER},
+      </if>
+      <if test="igdAmount != null">
+        #{igdAmount,jdbcType=VARCHAR},
+      </if>
+      <if test="igdSupplier != null">
+        #{igdSupplier,jdbcType=VARCHAR},
+      </if>
+      <if test="igdMaxduration != null">
+        #{igdMaxduration,jdbcType=INTEGER},
+      </if>
+      <if test="igdGrade != null">
+        #{igdGrade,jdbcType=INTEGER},
+      </if>
+      <if test="igdSavemethod != null">
+        #{igdSavemethod,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.zjw.springbootjavafx2.pojo.entity.Ingredient">
+    update ingredient
+    <set>
+      <if test="igdName != null">
+        igd_name = #{igdName,jdbcType=VARCHAR},
+      </if>
+      <if test="igdType != null">
+        igd_type = #{igdType,jdbcType=VARCHAR},
+      </if>
+      <if test="igdEnterhousetime != null">
+        igd_enterHouseTime = #{igdEnterhousetime,jdbcType=DATE},
+      </if>
+      <if test="igdDuration != null">
+        igd_duration = #{igdDuration,jdbcType=INTEGER},
+      </if>
+      <if test="igdAmount != null">
+        igd_amount = #{igdAmount,jdbcType=VARCHAR},
+      </if>
+      <if test="igdSupplier != null">
+        igd_supplier = #{igdSupplier,jdbcType=VARCHAR},
+      </if>
+      <if test="igdMaxduration != null">
+        igd_maxDuration = #{igdMaxduration,jdbcType=INTEGER},
+      </if>
+      <if test="igdGrade != null">
+        igd_grade = #{igdGrade,jdbcType=INTEGER},
+      </if>
+      <if test="igdSavemethod != null">
+        igd_saveMethod = #{igdSavemethod,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where igd_id = #{igdId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.zjw.springbootjavafx2.pojo.entity.Ingredient">
+    update ingredient
+    set igd_name = #{igdName,jdbcType=VARCHAR},
+      igd_type = #{igdType,jdbcType=VARCHAR},
+      igd_enterHouseTime = #{igdEnterhousetime,jdbcType=DATE},
+      igd_duration = #{igdDuration,jdbcType=INTEGER},
+      igd_amount = #{igdAmount,jdbcType=VARCHAR},
+      igd_supplier = #{igdSupplier,jdbcType=VARCHAR},
+      igd_maxDuration = #{igdMaxduration,jdbcType=INTEGER},
+      igd_grade = #{igdGrade,jdbcType=INTEGER},
+      igd_saveMethod = #{igdSavemethod,jdbcType=VARCHAR}
+    where igd_id = #{igdId,jdbcType=INTEGER}
+  </update>
+</mapper>

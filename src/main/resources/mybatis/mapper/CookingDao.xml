@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zjw.springbootjavafx2.dao.CookingDao">
+  <resultMap id="BaseResultMap" type="com.zjw.springbootjavafx2.pojo.entity.Cooking">
+    <id column="cooking_igd_id" jdbcType="VARCHAR" property="cookingIgdId" />
+    <id column="cooking_dish_id" jdbcType="VARCHAR" property="cookingDishId" />
+    <result column="cooking_cdm" jdbcType="VARCHAR" property="cookingCdm" />
+    <result column="cooking_igd_amount" jdbcType="VARCHAR" property="cookingIgdAmount" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    cooking_igd_id, cooking_dish_id, cooking_cdm, cooking_igd_amount
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="com.zjw.springbootjavafx2.pojo.entity.CookingKey" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from cooking
+    where cooking_igd_id = #{cookingIgdId,jdbcType=VARCHAR}
+      and cooking_dish_id = #{cookingDishId,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="com.zjw.springbootjavafx2.pojo.entity.CookingKey">
+    delete from cooking
+    where cooking_igd_id = #{cookingIgdId,jdbcType=VARCHAR}
+      and cooking_dish_id = #{cookingDishId,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" keyColumn="cooking_igd_id" keyProperty="cookingIgdId" parameterType="com.zjw.springbootjavafx2.pojo.entity.Cooking" useGeneratedKeys="true">
+    insert into cooking (cooking_dish_id, cooking_cdm, cooking_igd_amount
+      )
+    values (#{cookingDishId,jdbcType=VARCHAR}, #{cookingCdm,jdbcType=VARCHAR}, #{cookingIgdAmount,jdbcType=VARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" keyColumn="cooking_igd_id" keyProperty="cookingIgdId" parameterType="com.zjw.springbootjavafx2.pojo.entity.Cooking" useGeneratedKeys="true">
+    insert into cooking
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="cookingDishId != null">
+        cooking_dish_id,
+      </if>
+      <if test="cookingCdm != null">
+        cooking_cdm,
+      </if>
+      <if test="cookingIgdAmount != null">
+        cooking_igd_amount,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="cookingDishId != null">
+        #{cookingDishId,jdbcType=VARCHAR},
+      </if>
+      <if test="cookingCdm != null">
+        #{cookingCdm,jdbcType=VARCHAR},
+      </if>
+      <if test="cookingIgdAmount != null">
+        #{cookingIgdAmount,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.zjw.springbootjavafx2.pojo.entity.Cooking">
+    update cooking
+    <set>
+      <if test="cookingCdm != null">
+        cooking_cdm = #{cookingCdm,jdbcType=VARCHAR},
+      </if>
+      <if test="cookingIgdAmount != null">
+        cooking_igd_amount = #{cookingIgdAmount,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where cooking_igd_id = #{cookingIgdId,jdbcType=VARCHAR}
+      and cooking_dish_id = #{cookingDishId,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.zjw.springbootjavafx2.pojo.entity.Cooking">
+    update cooking
+    set cooking_cdm = #{cookingCdm,jdbcType=VARCHAR},
+      cooking_igd_amount = #{cookingIgdAmount,jdbcType=VARCHAR}
+    where cooking_igd_id = #{cookingIgdId,jdbcType=VARCHAR}
+      and cooking_dish_id = #{cookingDishId,jdbcType=VARCHAR}
+  </update>
+</mapper>

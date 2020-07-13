@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="528.0" prefWidth="856.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.zjw.springbootjavafx2.controller.IgdListController">
+   <top>
+      <Pane prefHeight="69.0" prefWidth="856.0" style="-fx-background-color: pink;" BorderPane.alignment="CENTER">
+         <children>
+            <Button layoutX="48.0" layoutY="15.0" mnemonicParsing="false" onAction="#back" prefHeight="40.0" prefWidth="100.0" text="返回" />
+            <Button layoutX="586.0" layoutY="15.0" mnemonicParsing="false" onAction="#showAll" prefHeight="40.0" prefWidth="100.0" text="刷新" />
+         </children>
+      </Pane>
+   </top>
+   <center>
+      <TableView prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER" fx:id="dataTable">
+          <columns>
+              <TableColumn fx:id="igdName" prefWidth="75.0" text="名称" />
+              <TableColumn fx:id="idgType" prefWidth="66.0" text="类型" />
+              <TableColumn fx:id="enterHouseTime" prefWidth="93.0" text="入库时间" />
+              <!--<TableColumn fx:id="igdDruation" prefWidth="88.0" text="持续时间" />-->
+              <TableColumn fx:id="igdMaxDruation" prefWidth="116.0" text="保质期" />
+
+              <TableColumn fx:id="relativeSupplier" prefWidth="108.0" text="相关供应商" />
+              <TableColumn fx:id="choice" prefWidth="119.0" text="操作" />
+          </columns>
+      </TableView>
+   </center>
+</BorderPane>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
+            prefHeight="545.0" prefWidth="804.0" xmlns="http://javafx.com/javafx/8"
+            fx:controller="com.zjw.springbootjavafx2.controller.ImageAllOfController"
+            xmlns:fx="http://javafx.com/fxml/1">
+   <top>
+      <Pane prefHeight="70.0" prefWidth="804.0" style="-fx-background-color: pink;" BorderPane.alignment="CENTER">
+         <children>
+            <Button layoutX="32.0" layoutY="16.0" mnemonicParsing="false" onAction="#back" prefHeight="39.0" prefWidth="99.0" text="返回" />
+         </children>
+      </Pane>
+   </top>
+   <center>
+      <Pane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <children>
+            <ImageView fitHeight="456.0" fitWidth="470.0" layoutX="167.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/供应链.png" />
+               </image>
+            </ImageView>
+         </children>
+      </Pane>
+   </center>
+</BorderPane>

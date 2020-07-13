@@ -1,0 +1,12 @@
+spring:
+  datasource:
+    username: root
+    password: 2241260269zjw
+    url: jdbc:mysql://localhost:3306/mysql_javafx_db1?serverTimezone=GMT
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    type: com.alibaba.druid.pool.DruidDataSource
+
+mybatis:
+  configuration:
+    map-underscore-to-camel-case: true #数据库表中的数据自动转成驼峰 e.g.dish_base变成dishBase
+  mapper-locations: classpath:mybatis/mapper/*.xml  #加载mapper文件路径

@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zjw.springbootjavafx2.dao.SupplierDao">
+  <resultMap id="BaseResultMap" type="com.zjw.springbootjavafx2.pojo.entity.Supplier">
+    <id column="supplier_ID" jdbcType="INTEGER" property="supplierId" />
+    <result column="supplier_name" jdbcType="VARCHAR" property="supplierName" />
+    <result column="supplier_phoneNumber" jdbcType="VARCHAR" property="supplierPhonenumber" />
+    <result column="supplier_grade" jdbcType="INTEGER" property="supplierGrade" />
+    <result column="supplier_firstGrade" jdbcType="INTEGER" property="supplierFirstgrade" />
+    <result column="supplier_address" jdbcType="VARCHAR" property="supplierAddress" />
+    <result column="supplier_plantSize" jdbcType="VARCHAR" property="supplierPlantsize" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    supplier_ID, supplier_name, supplier_phoneNumber, supplier_grade, supplier_firstGrade, 
+    supplier_address, supplier_plantSize
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from supplier
+    where supplier_ID = #{supplierId,jdbcType=INTEGER}
+  </select>
+    <select id="selectAll" resultType="com.zjw.springbootjavafx2.pojo.entity.Supplier">
+      SELECT
+      <include refid="Base_Column_List"/>
+      FROM supplier
+    </select>
+    <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from supplier
+    where supplier_ID = #{supplierId,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" keyColumn="supplier_ID" keyProperty="supplierId" parameterType="com.zjw.springbootjavafx2.pojo.entity.Supplier" useGeneratedKeys="true">
+    insert into supplier (supplier_name, supplier_phoneNumber, 
+      supplier_grade, supplier_firstGrade, supplier_address, 
+      supplier_plantSize)
+    values (#{supplierName,jdbcType=VARCHAR}, #{supplierPhonenumber,jdbcType=VARCHAR}, 
+      #{supplierGrade,jdbcType=INTEGER}, #{supplierFirstgrade,jdbcType=INTEGER}, #{supplierAddress,jdbcType=VARCHAR}, 
+      #{supplierPlantsize,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" keyColumn="supplier_ID" keyProperty="supplierId" parameterType="com.zjw.springbootjavafx2.pojo.entity.Supplier" useGeneratedKeys="true">
+    insert into supplier
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="supplierName != null">
+        supplier_name,
+      </if>
+      <if test="supplierPhonenumber != null">
+        supplier_phoneNumber,
+      </if>
+      <if test="supplierGrade != null">
+        supplier_grade,
+      </if>
+      <if test="supplierFirstgrade != null">
+        supplier_firstGrade,
+      </if>
+      <if test="supplierAddress != null">
+        supplier_address,
+      </if>
+      <if test="supplierPlantsize != null">
+        supplier_plantSize,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="supplierName != null">
+        #{supplierName,jdbcType=VARCHAR},
+      </if>
+      <if test="supplierPhonenumber != null">
+        #{supplierPhonenumber,jdbcType=VARCHAR},
+      </if>
+      <if test="supplierGrade != null">
+        #{supplierGrade,jdbcType=INTEGER},
+      </if>
+      <if test="supplierFirstgrade != null">
+        #{supplierFirstgrade,jdbcType=INTEGER},
+      </if>
+      <if test="supplierAddress != null">
+        #{supplierAddress,jdbcType=VARCHAR},
+      </if>
+      <if test="supplierPlantsize != null">
+        #{supplierPlantsize,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.zjw.springbootjavafx2.pojo.entity.Supplier">
+    update supplier
+    <set>
+      <if test="supplierName != null">
+        supplier_name = #{supplierName,jdbcType=VARCHAR},
+      </if>
+      <if test="supplierPhonenumber != null">
+        supplier_phoneNumber = #{supplierPhonenumber,jdbcType=VARCHAR},
+      </if>
+      <if test="supplierGrade != null">
+        supplier_grade = #{supplierGrade,jdbcType=INTEGER},
+      </if>
+      <if test="supplierFirstgrade != null">
+        supplier_firstGrade = #{supplierFirstgrade,jdbcType=INTEGER},
+      </if>
+      <if test="supplierAddress != null">
+        supplier_address = #{supplierAddress,jdbcType=VARCHAR},
+      </if>
+      <if test="supplierPlantsize != null">
+        supplier_plantSize = #{supplierPlantsize,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where supplier_ID = #{supplierId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.zjw.springbootjavafx2.pojo.entity.Supplier">
+    update supplier
+    set supplier_name = #{supplierName,jdbcType=VARCHAR},
+      supplier_phoneNumber = #{supplierPhonenumber,jdbcType=VARCHAR},
+      supplier_grade = #{supplierGrade,jdbcType=INTEGER},
+      supplier_firstGrade = #{supplierFirstgrade,jdbcType=INTEGER},
+      supplier_address = #{supplierAddress,jdbcType=VARCHAR},
+      supplier_plantSize = #{supplierPlantsize,jdbcType=VARCHAR}
+    where supplier_ID = #{supplierId,jdbcType=INTEGER}
+  </update>
+</mapper>

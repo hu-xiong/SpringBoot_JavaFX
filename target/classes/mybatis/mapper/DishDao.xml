@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zjw.springbootjavafx2.dao.DishDao">
+  <resultMap id="BaseResultMap" type="com.zjw.springbootjavafx2.pojo.entity.Dish">
+    <id column="dish_name" jdbcType="VARCHAR" property="dishName" />
+    <result column="dish_type" jdbcType="VARCHAR" property="dishType" />
+    <result column="dish_grade" jdbcType="INTEGER" property="dishGrade" />
+    <result column="dish_dificulty" jdbcType="INTEGER" property="dishDificulty" />
+    <result column="dish_firstFoodId" jdbcType="INTEGER" property="dishFirstfoodid" />
+    <result column="dish_firstName" jdbcType="VARCHAR" property="dishFirstname" />
+    <result column="dish_firstAmount" jdbcType="VARCHAR" property="dishFirstamount" />
+    <result column="dish_secondFoodId" jdbcType="INTEGER" property="dishSecondfoodid" />
+    <result column="dish_secondAmount" jdbcType="VARCHAR" property="dishSecondamount" />
+    <result column="dish_secondName" jdbcType="VARCHAR" property="dishSecondname" />
+    <result column="dish_cdmId" jdbcType="INTEGER" property="dishCdmid" />
+    <result column="dish_cdmName" jdbcType="VARCHAR" property="dishCdmname" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    dish_name, dish_type, dish_grade, dish_dificulty, dish_firstFoodId, dish_firstName, 
+    dish_firstAmount, dish_secondFoodId, dish_secondAmount, dish_secondName, dish_cdmId, 
+    dish_cdmName
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from dish
+    where dish_name = #{dishName,jdbcType=VARCHAR}
+  </select>
+  <select id="selectAll" resultType="com.zjw.springbootjavafx2.pojo.entity.Dish">
+    SELECT
+    <include refid="Base_Column_List"/>
+    FROM dish
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from dish
+    where dish_name = #{dishName,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.zjw.springbootjavafx2.pojo.entity.Dish">
+    insert into dish (dish_name, dish_type, dish_grade, 
+      dish_dificulty, dish_firstFoodId, dish_firstName, 
+      dish_firstAmount, dish_secondFoodId, dish_secondAmount, 
+      dish_secondName, dish_cdmId, dish_cdmName
+      )
+    values (#{dishName,jdbcType=VARCHAR}, #{dishType,jdbcType=VARCHAR}, #{dishGrade,jdbcType=INTEGER}, 
+      #{dishDificulty,jdbcType=INTEGER}, #{dishFirstfoodid,jdbcType=INTEGER}, #{dishFirstname,jdbcType=VARCHAR}, 
+      #{dishFirstamount,jdbcType=VARCHAR}, #{dishSecondfoodid,jdbcType=INTEGER}, #{dishSecondamount,jdbcType=VARCHAR}, 
+      #{dishSecondname,jdbcType=VARCHAR}, #{dishCdmid,jdbcType=INTEGER}, #{dishCdmname,jdbcType=VARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.zjw.springbootjavafx2.pojo.entity.Dish">
+    insert into dish
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="dishName != null">
+        dish_name,
+      </if>
+      <if test="dishType != null">
+        dish_type,
+      </if>
+      <if test="dishGrade != null">
+        dish_grade,
+      </if>
+      <if test="dishDificulty != null">
+        dish_dificulty,
+      </if>
+      <if test="dishFirstfoodid != null">
+        dish_firstFoodId,
+      </if>
+      <if test="dishFirstname != null">
+        dish_firstName,
+      </if>
+      <if test="dishFirstamount != null">
+        dish_firstAmount,
+      </if>
+      <if test="dishSecondfoodid != null">
+        dish_secondFoodId,
+      </if>
+      <if test="dishSecondamount != null">
+        dish_secondAmount,
+      </if>
+      <if test="dishSecondname != null">
+        dish_secondName,
+      </if>
+      <if test="dishCdmid != null">
+        dish_cdmId,
+      </if>
+      <if test="dishCdmname != null">
+        dish_cdmName,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="dishName != null">
+        #{dishName,jdbcType=VARCHAR},
+      </if>
+      <if test="dishType != null">
+        #{dishType,jdbcType=VARCHAR},
+      </if>
+      <if test="dishGrade != null">
+        #{dishGrade,jdbcType=INTEGER},
+      </if>
+      <if test="dishDificulty != null">
+        #{dishDificulty,jdbcType=INTEGER},
+      </if>
+      <if test="dishFirstfoodid != null">
+        #{dishFirstfoodid,jdbcType=INTEGER},
+      </if>
+      <if test="dishFirstname != null">
+        #{dishFirstname,jdbcType=VARCHAR},
+      </if>
+      <if test="dishFirstamount != null">
+        #{dishFirstamount,jdbcType=VARCHAR},
+      </if>
+      <if test="dishSecondfoodid != null">
+        #{dishSecondfoodid,jdbcType=INTEGER},
+      </if>
+      <if test="dishSecondamount != null">
+        #{dishSecondamount,jdbcType=VARCHAR},
+      </if>
+      <if test="dishSecondname != null">
+        #{dishSecondname,jdbcType=VARCHAR},
+      </if>
+      <if test="dishCdmid != null">
+        #{dishCdmid,jdbcType=INTEGER},
+      </if>
+      <if test="dishCdmname != null">
+        #{dishCdmname,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.zjw.springbootjavafx2.pojo.entity.Dish">
+    update dish
+    <set>
+      <if test="dishType != null">
+        dish_type = #{dishType,jdbcType=VARCHAR},
+      </if>
+      <if test="dishGrade != null">
+        dish_grade = #{dishGrade,jdbcType=INTEGER},
+      </if>
+      <if test="dishDificulty != null">
+        dish_dificulty = #{dishDificulty,jdbcType=INTEGER},
+      </if>
+      <if test="dishFirstfoodid != null">
+        dish_firstFoodId = #{dishFirstfoodid,jdbcType=INTEGER},
+      </if>
+      <if test="dishFirstname != null">
+        dish_firstName = #{dishFirstname,jdbcType=VARCHAR},
+      </if>
+      <if test="dishFirstamount != null">
+        dish_firstAmount = #{dishFirstamount,jdbcType=VARCHAR},
+      </if>
+      <if test="dishSecondfoodid != null">
+        dish_secondFoodId = #{dishSecondfoodid,jdbcType=INTEGER},
+      </if>
+      <if test="dishSecondamount != null">
+        dish_secondAmount = #{dishSecondamount,jdbcType=VARCHAR},
+      </if>
+      <if test="dishSecondname != null">
+        dish_secondName = #{dishSecondname,jdbcType=VARCHAR},
+      </if>
+      <if test="dishCdmid != null">
+        dish_cdmId = #{dishCdmid,jdbcType=INTEGER},
+      </if>
+      <if test="dishCdmname != null">
+        dish_cdmName = #{dishCdmname,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where dish_name = #{dishName,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.zjw.springbootjavafx2.pojo.entity.Dish">
+    update dish
+    set dish_type = #{dishType,jdbcType=VARCHAR},
+      dish_grade = #{dishGrade,jdbcType=INTEGER},
+      dish_dificulty = #{dishDificulty,jdbcType=INTEGER},
+      dish_firstFoodId = #{dishFirstfoodid,jdbcType=INTEGER},
+      dish_firstName = #{dishFirstname,jdbcType=VARCHAR},
+      dish_firstAmount = #{dishFirstamount,jdbcType=VARCHAR},
+      dish_secondFoodId = #{dishSecondfoodid,jdbcType=INTEGER},
+      dish_secondAmount = #{dishSecondamount,jdbcType=VARCHAR},
+      dish_secondName = #{dishSecondname,jdbcType=VARCHAR},
+      dish_cdmId = #{dishCdmid,jdbcType=INTEGER},
+      dish_cdmName = #{dishCdmname,jdbcType=VARCHAR}
+    where dish_name = #{dishName,jdbcType=VARCHAR}
+  </update>
+</mapper>

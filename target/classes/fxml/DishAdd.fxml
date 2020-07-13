@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
+            prefHeight="500.0" prefWidth="891.0" xmlns="http://javafx.com/javafx/8"
+            fx:controller="com.zjw.springbootjavafx2.controller.DishAddController"
+            xmlns:fx="http://javafx.com/fxml/1">
+   <top>
+      <Pane prefHeight="85.0" prefWidth="891.0" style="-fx-background-color: pink;" BorderPane.alignment="CENTER">
+         <children>
+            <Button layoutX="33.0" layoutY="19.0" mnemonicParsing="false" onAction="#back" prefHeight="47.0" prefWidth="106.0" text="返回" />
+         </children>
+      </Pane>
+   </top>
+   <center>
+      <Pane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <children>
+            <TextField layoutX="148.0" layoutY="27.0" fx:id="name" />
+            <TextField layoutX="565.0" layoutY="208.0" fx:id="type" />
+            <TextField layoutX="148.0" layoutY="87.0" fx:id="difficulty" />
+            <TextField layoutX="148.0" layoutY="145.0" fx:id="food1" />
+            <TextField layoutX="565.0" layoutY="27.0" fx:id="food2" />
+            <TextField layoutX="565.0" layoutY="87.0" fx:id="food2Amount" />
+            <TextField layoutX="565.0" layoutY="145.0" fx:id="cdm" />
+            <TextField layoutX="148.0" layoutY="208.0" fx:id="food1Amount" />
+            <Button layoutX="378.0" layoutY="299.0" mnemonicParsing="false" onAction="#send" prefHeight="44.0" prefWidth="135.0" text="提交" />
+            <Text layoutX="82.0" layoutY="48.0" strokeType="OUTSIDE" strokeWidth="0.0" text="名称：" />
+            <Text layoutX="496.0" layoutY="229.0" strokeType="OUTSIDE" strokeWidth="0.0" text="类型：" />
+            <Text layoutX="67.0" layoutY="108.0" strokeType="OUTSIDE" strokeWidth="0.0" text="烹饪难度：" />
+            <Text layoutX="78.0" layoutY="166.0" strokeType="OUTSIDE" strokeWidth="0.0" text="食物1：" />
+            <Text layoutX="63.0" layoutY="229.0" strokeType="OUTSIDE" strokeWidth="0.0" text="食物1数量：" />
+            <Text layoutX="496.0" layoutY="48.0" strokeType="OUTSIDE" strokeWidth="0.0" text="食物2：" />
+            <Text layoutX="481.0" layoutY="108.0" strokeType="OUTSIDE" strokeWidth="0.0" text="食物2数量：" />
+            <Text layoutX="496.0" layoutY="166.0" strokeType="OUTSIDE" strokeWidth="0.0" text="调味品：" />
+         </children>
+      </Pane>
+   </center>
+</BorderPane>

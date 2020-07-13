@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="494.0" prefWidth="893.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.zjw.springbootjavafx2.controller.SupplierAddController">
+   <top>
+      <Pane prefHeight="81.0" prefWidth="893.0" style="-fx-background-color: pink;" BorderPane.alignment="CENTER">
+         <children>
+            <Button layoutX="30.0" layoutY="18.0" mnemonicParsing="false" onAction="#back1" prefHeight="45.0" prefWidth="107.0" text="返回" />
+         </children>
+      </Pane>
+   </top>
+   <center>
+      <Pane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <children>
+            <TextField fx:id="name" layoutX="346.0" layoutY="33.0" />
+            <TextField fx:id="number" layoutX="346.0" layoutY="84.0" />
+            <TextField fx:id="plantSize" layoutX="346.0" layoutY="134.0" />
+            <TextField fx:id="firstGrade" layoutX="346.0" layoutY="192.0" />
+            <TextField fx:id="address" layoutX="346.0" layoutY="242.0" />
+            <Button layoutX="397.0" layoutY="348.0" mnemonicParsing="false" onAction="#send" prefHeight="35.0" prefWidth="100.0" text="提交" />
+            <Text layoutX="244.0" layoutY="54.0" strokeType="OUTSIDE" strokeWidth="0.0" text="名称：" />
+            <Text layoutX="244.0" layoutY="105.0" strokeType="OUTSIDE" strokeWidth="0.0" text="手机号：" />
+            <Text layoutX="244.0" layoutY="155.0" strokeType="OUTSIDE" strokeWidth="0.0" text="规模：" />
+            <Text layoutX="244.0" layoutY="213.0" strokeType="OUTSIDE" strokeWidth="0.0" text="印象分：" />
+            <Text layoutX="244.0" layoutY="263.0" strokeType="OUTSIDE" strokeWidth="0.0" text="地址：" />
+            <TextField fx:id="grade" layoutX="346.0" layoutY="291.0"  />
+            <Text layoutX="244.0" layoutY="312.0" strokeType="OUTSIDE" strokeWidth="0.0" text="等级：" />
+         </children>
+      </Pane>
+   </center>
+</BorderPane>

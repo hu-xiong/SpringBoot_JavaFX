@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.chart.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="563.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.zjw.springbootjavafx2.controller.IgdWatchController">
+   <top>
+      <Pane prefHeight="73.0" prefWidth="920.0" style="-fx-background-color: pink;" BorderPane.alignment="CENTER">
+         <children>
+            <Button layoutX="43.0" layoutY="14.0" mnemonicParsing="false" onAction="#back" prefHeight="46.0" prefWidth="99.0" text="返回" />
+            <Button layoutX="661.0" layoutY="17.0" mnemonicParsing="false" onAction="#show" prefHeight="40.0" prefWidth="94.0" text="显示" />
+         </children>
+      </Pane>
+   </top>
+   <center>
+      <Pane prefHeight="481.0" prefWidth="997.0" BorderPane.alignment="CENTER">
+         <children>
+            <TableView fx:id="table1" prefHeight="490.0" prefWidth="900.0">
+              <columns>
+                <TableColumn fx:id="name" prefWidth="173.0" text="名称" />
+                <TableColumn fx:id="enterTime" prefWidth="152.0" text="入库时间" />
+                  <TableColumn fx:id="maxDuration" prefWidth="151.0" text="保质期" />
+                  <TableColumn fx:id="duration" prefWidth="192.0" text="累计存储时间" />
+                  <TableColumn fx:id="grade" prefWidth="180.0" text="食材等级" />
+              </columns>
+            </TableView>
+         </children>
+      </Pane>
+   </center>
+</BorderPane>

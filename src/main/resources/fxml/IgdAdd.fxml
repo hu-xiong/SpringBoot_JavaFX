@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="488.0" prefWidth="858.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.zjw.springbootjavafx2.controller.IgdAddController">
+   <top>
+      <Pane prefHeight="91.0" prefWidth="858.0" style="-fx-background-color: pink;" BorderPane.alignment="CENTER">
+         <children>
+            <Text layoutX="336.0" layoutY="56.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 30;" text="食材入库添加" wrappingWidth="186.0" />
+            <Button layoutX="36.0" layoutY="20.0" mnemonicParsing="false" onAction="#back" prefHeight="49.0" prefWidth="84.0" text="返回" />
+         </children>
+      </Pane>
+   </top>
+   <center>
+      <Pane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <children>
+            <TextField fx:id="name" layoutX="134.0" layoutY="47.0" />
+            <TextField fx:id="type" layoutX="134.0" layoutY="96.0" />
+            <TextField fx:id="maxDuration" layoutX="134.0" layoutY="147.0" />
+            <TextField fx:id="saveMethod" layoutX="134.0" layoutY="199.0" />
+            <TextField fx:id="supplier" layoutX="557.0" layoutY="47.0" />
+            <TextField fx:id="num" layoutX="557.0" layoutY="96.0" />
+            <Text layoutX="42.0" layoutY="68.0" strokeType="OUTSIDE" strokeWidth="0.0" text="名称：" />
+            <Text layoutX="42.0" layoutY="117.0" strokeType="OUTSIDE" strokeWidth="0.0" text="类型：" />
+            <Text layoutX="42.0" layoutY="168.0" strokeType="OUTSIDE" strokeWidth="0.0" text="保质期：" />
+            <Text layoutX="42.0" layoutY="220.0" strokeType="OUTSIDE" strokeWidth="0.0" text="存储方式：" />
+            <Text layoutX="471.0" layoutY="68.0" strokeType="OUTSIDE" strokeWidth="0.0" text="供应商：" />
+            <Text layoutX="471.0" layoutY="117.0" strokeType="OUTSIDE" strokeWidth="0.0" text="数量：" />
+            <Button layoutX="384.0" layoutY="276.0" mnemonicParsing="false" onAction="#submit" prefHeight="52.0" prefWidth="105.0" style="-fx-border-radius: 20;" text="提交" />
+         </children>
+      </Pane>
+   </center>
+</BorderPane>
